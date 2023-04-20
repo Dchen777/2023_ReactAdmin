@@ -43,6 +43,7 @@ export default function Category() {
     //发请求
     const result = await reqAddCategory(categoryNameValue, categoryIdValue)
     if (result.status === 0) {
+
       getCategorys()   //重新获取列表数据
     }
     //关闭弹窗
@@ -161,7 +162,12 @@ export default function Category() {
   return (
 
     <Card title={title} extra={extra} style={{ width: '100%', }}>
-      <Table bordered dataSource={dataSource} columns={columns} pagination={{ defaultPageSize: 6, showQuickJumper: true }} loading={loading} />;
+      <Table bordered 
+      rowKey='_id'
+      dataSource={dataSource} 
+      columns={columns} 
+      pagination={{ defaultPageSize: 6, showQuickJumper: true }} 
+      loading={loading} />;
 
 
       {/*添加分类弹窗*/}

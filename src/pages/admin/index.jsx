@@ -15,7 +15,7 @@ export default function Admin() {
 
   React.useEffect(() => {
     if (!memoryUtils.user) {
-      console.log('there');
+      // console.log('there');
       navigate('/login')
     }
   })
